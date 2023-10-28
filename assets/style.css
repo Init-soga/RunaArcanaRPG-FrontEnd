@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "Beaufort for LOL Bold";
+    src: url("https://db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.eot");
+    src: url("https://db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.svg#Beaufort for LOL Bold")format("svg");
+}
+
+@font-face {
+    font-family: "SpiegelSans Trial ExtraBold";
+    src: url("https://db.onlinewebfonts.com/t/02e07fa3b0531581d9f7e4b836e4fe19.eot");
+    src: url("https://db.onlinewebfonts.com/t/02e07fa3b0531581d9f7e4b836e4fe19.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/02e07fa3b0531581d9f7e4b836e4fe19.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/02e07fa3b0531581d9f7e4b836e4fe19.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/02e07fa3b0531581d9f7e4b836e4fe19.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/02e07fa3b0531581d9f7e4b836e4fe19.svg#SpiegelSans Trial ExtraBold")format("svg");
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "SpiegelSans Trial ExtraBold";
+}
