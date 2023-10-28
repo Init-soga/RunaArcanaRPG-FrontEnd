@@ -6,7 +6,7 @@ export default {
     titleTemplate: '%s - RunaArcanaRPG',
     title: 'RunaArcanaRPG',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'pt-BR'
     },
     meta: [
       { charset: 'utf-8' },

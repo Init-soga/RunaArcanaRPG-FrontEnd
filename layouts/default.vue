@@ -1,25 +1,27 @@
-<template>
+<template app>
   <v-app class="background">
-    <v-navigation-drawer permanent>
-      <v-list nav>
-
-      </v-list>
-    </v-navigation-drawer>
-    <Nuxt />
+    <Drawer />
+    <v-main>
+      <Nuxt />
+    </v-main>
   </v-app>
 </template>
 
 <script>
+import Drawer from '~/components/Drawer.vue';
 export default {
   data() {
     return {}
   },
+  components: {
+    Drawer
+  }
 }
 </script>
 
 <style scoped>
 .background {
-  background-image: url("~/assets/Fundos/selecao.png");
+  background-image: url("~/assets/Fundos/background.png");
   background-size: cover;
 
 }

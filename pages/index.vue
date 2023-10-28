@@ -14,13 +14,14 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  layout: 'empty',
   data() {
     return {}
   },
   methods: {
     goTo() {
       this.$router.push({
-        path: "/aventuras"
+        path: "/inicio"
       })
     }
   }
