@@ -1,5 +1,5 @@
-<template app>
-  <v-app class="background">
+<template app class="background">
+  <v-app>
     <Drawer />
     <v-main>
       <Nuxt />
@@ -23,6 +23,8 @@ export default {
 .background {
   background-image: url("~/assets/Fundos/background.png");
   background-size: cover;
-
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 </style>

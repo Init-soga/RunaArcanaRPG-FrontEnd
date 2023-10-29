@@ -1,6 +1,6 @@
 @font-face {
     font-family: "BeaufortForLOL";
-    src: url("~/assets/fonts/beaufort-for-lol/BeaufortforLOL-Bold.ttf");
+    src: url("~/assets/fonts/beaufort-for-lol/BeaufortforLOL-Medium.ttf");
 }
 
 @font-face{
@@ -13,11 +13,4 @@
     box-sizing: border-box;
     font-family: "BeaufortForLOL";
     cursor: url("~/assets/cursor.png"), auto;
-}
-
-.background {
-    background-image: url("~/assets/Fundos/background.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }

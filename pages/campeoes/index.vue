@@ -8,18 +8,20 @@
                 <v-card-text>
                     <v-container fluid>
                         <v-row class="container-row">
-                            <v-col cols="3"  class="container-personagem" v-for="(personagem, index) in personagens" :key="index">
-                                <div class="container-image">
-                                    <div>
-                                        <v-img :src="personagem.imagem"></v-img>
+                            <v-col cols="3" class="container-personagem" v-for="(personagem, index) in personagens"
+                                :key="index">
+                                <div @click="goTo(personagem)">
+                                    <div class="container-image">
+                                        <div>
+                                            <v-img :src="personagem.imagem"></v-img>
+                                        </div>
                                     </div>
-
-                                </div>
-                                <div class="nome-personagens">
-                                    <span>{{ personagem.nome }}</span>
-                                </div>
-                                <div class="titulo-personagens">
-                                    <span>{{ personagem.titulo }}</span>
+                                    <div class="nome-personagens">
+                                        <span>{{ personagem.nome }}</span>
+                                    </div>
+                                    <div class="titulo-personagens">
+                                        <span>{{ personagem.titulo }}</span>
+                                    </div>
                                 </div>
                             </v-col>
                         </v-row>
@@ -47,6 +49,11 @@ export default Vue.extend({
                 this.personagens.forEach((e: Personagem) => {
                     e.nome = e.nome.toUpperCase()
                 })
+            })
+        },
+        goTo(route: Personagem) {
+            this.$router.push({
+                path: `/campeoes/${route.id}`
             })
         }
     },
@@ -106,7 +113,7 @@ export default Vue.extend({
     color: #C8AA6E;
 }
 
-.titulo{
+.titulo {
     font-family: "Beaufort for LOL Bold" !important;
     font-size: 2.2em;
     padding-top: 2%;
