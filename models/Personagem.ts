@@ -9,7 +9,9 @@ interface Personagem {
     relacionado2: string,
     relacionado3: string,
     titulo: string,
-    frase: string
+    frase: string,
+    imagem: string,
+    mesa: string
 }
 
 export default Personagem

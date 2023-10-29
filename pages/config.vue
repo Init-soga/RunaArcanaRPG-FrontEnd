@@ -2,7 +2,7 @@
     <v-app class="background">
         <div class="main-container">
             <v-card style="margin-top: 2%;" width="70vw" height="100%">
-                <v-card-title>Adicionar infos</v-card-title>
+                <v-card-title class="title">Adicionar infos</v-card-title>
                 <v-card-text>
                     <v-container fluid>
                         <v-row>
@@ -23,6 +23,11 @@
                             </v-col>
                             <v-col> <v-text-field outlined v-model="postObject.relacionado3"
                                     label="Relacionado 3"></v-text-field>
+                            </v-col>
+                            <v-col> <v-text-field outlined v-model="postObject.imagem"
+                                    label="Link da imagem (flickr)"></v-text-field></v-col>
+                            <v-col>
+                                <v-select v-model="postObject.mesa"  outlined label="Mesa" :items="['zefiros', 'fragmentos']" />
                             </v-col>
                         </v-row>
                         <v-row>
@@ -92,5 +97,9 @@ export default Vue.extend({
 .main-container {
     display: flex;
     justify-content: center;
+}
+
+.title{
+    font-family: "BeaufortForLOL" !important;
 }
 </style>
