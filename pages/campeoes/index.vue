@@ -8,19 +8,19 @@
                 <v-card-text>
                     <v-container fluid>
                         <v-row class="container-row">
-                            <v-col cols="3" class="container-personagem" v-for="(personagem, index) in personagens"
+                            <v-col cols="3" class="container-personagem" v-for="(personagem, index) in char"
                                 :key="index">
                                 <div @click="goTo(personagem)">
                                     <div class="container-image">
                                         <div>
-                                            <v-img :src="personagem.imagem"></v-img>
+                                            <v-img aspect-ratio="1" :src="personagem.url_select"></v-img>
                                         </div>
                                     </div>
                                     <div class="nome-personagens">
-                                        <span>{{ personagem.nome }}</span>
+                                        <span>{{ personagem.name }}</span>
                                     </div>
                                     <div class="titulo-personagens">
-                                        <span>{{ personagem.titulo }}</span>
+                                        <span>{{ personagem.title }}</span>
                                     </div>
                                 </div>
                             </v-col>
@@ -39,15 +39,15 @@ import Personagem from '~/models/Personagem';
 export default Vue.extend({
     data() {
         return {
-            personagens: [] as Array<Personagem>
+            char: [] as Array<Personagem>
         }
     },
     methods: {
         async getData() {
-            await this.$axios.get("http://127.0.0.1:3333/personagens").then((res) => {
-                this.personagens = res.data
-                this.personagens.forEach((e: Personagem) => {
-                    e.nome = e.nome.toUpperCase()
+            await this.$axios.get("http://127.0.0.1:3333/char").then((res) => {
+                this.char = res.data
+                this.char.forEach((e: Personagem) => {
+                    e.name = e.name.toUpperCase()
                 })
             })
         },

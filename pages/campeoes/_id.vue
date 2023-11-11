@@ -7,25 +7,19 @@
                         <v-col cols="2">
                             <div class="coluna-esquerda">
                                 <div class="container-role">
-                                    <v-img :src="require('~/assets/Icones/role_icon_fighter.png')"></v-img>
+                                    <v-img :src="char.role?.url_icon"></v-img>
+                                    <span>{{ char.role?.name }}</span>
                                 </div>
-                                <div>
-                                    <span>Lutador</span>
-                                </div>
-                                <div class="container-region">
-                                    <v-img :src="require('~/assets/Icones/noxus_crest_icon.png')"></v-img>
-                                    <v-img :src="require('~/assets/Icones/ionia_crest_icon.png')"></v-img>
-                                </div>
-                                <div>
-                                    <span>Noxus/Ionia</span>
+                                <div class="container-role">
+                                    <v-img :src="char.region?.url_icon"></v-img>
+                                    <span>{{ char.region?.name }}</span>
                                 </div>
                             </div>
                         </v-col>
                         <v-col cols="8">
                             <div class="coluna-meio">
                                 <div class="container_img">
-                                    <v-img :src="require('~/assets/Personagens/Khamzat/khamzat_splash.png')"></v-img>
-                                    <div class="over-text"><span>KHAMZAT</span></div>
+                                    <v-img :src="char.url_splash"></v-img>
                                 </div>
                             </div>
                         </v-col>
@@ -34,6 +28,25 @@
                         </v-col>
                     </v-row>
                 </div>
+                <v-card width="85vw" class="container-down">
+                    <v-container fluid>
+                        <v-row class="name-span">
+                            <span>{{ char.name }}</span>
+                        </v-row>
+                        <v-row class="title-span">
+                            <span>{{ char.title }}</span>
+                        </v-row>
+                        <v-row class="title-manifest-span">
+                            "{{ char.manifest_title }}"
+                        </v-row>
+                        <v-row class="body-span">
+                            {{ char.manifest_body }}
+                        </v-row>
+                        <v-row class="speak-span">
+                            "{{ char.speak }}"
+                        </v-row>
+                    </v-container>
+                </v-card>
             </v-card>
         </div>
     </v-app>
@@ -46,18 +59,15 @@ import Personagem from '~/models/Personagem';
 export default Vue.extend({
     data() {
         return {
-            personagem: {} as Personagem
+            char: {} as Personagem
         }
     },
     methods: {
         async getData() {
-
-            console.log(this.$route.params.id)
-
-            await this.$axios.get(`http://127.0.0.1:3333/personagens/${this.$route.params.id}`).then((res) => {
-                this.personagem = res.data
+            await this.$axios.get(`http://127.0.0.1:3333/char/${this.$route.params.id}`).then((res) => {
+                this.char = res.data
+                console.log(this.char)
             })
-
         }
     },
     created() {
@@ -101,31 +111,62 @@ export default Vue.extend({
     height: 100%;
     width: 100%;
     display: flex;
-    position: relative;
+    justify-content: center;
+}
+
+.container-role {
+    width: 8vw;
+    height: auto;
+    overflow: auto;
     text-align: center;
-    color: white;
 }
 
-.over-text {
-    position: absolute;
-    bottom: -10%;
-    right: 25%;
-    left: 50%;
-    margin-left: -25%;
-    font-size: 6.5em;
-    color: #C89B3C
+.container-down {
+    margin-top: 2%;
+    background-color: #0e1b1aab;
+    border: 3px solid #C8AA6E;
 }
 
-.container-image v-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.container-region {
+.name-span {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 30%;
+    justify-content: center;
+    font-size: 2.6em;
+    color: #C89B3C;
+    font-size: 2.2em;
 }
+
+.title-manifest-span {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+    margin-bottom: 2%;
+    margin-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+}
+
+.body-span {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2%;
+}
+
+.speak-span {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    font-style: italic;
+    color: #C8AA6E;
+    text-align: center;
+    padding: 2% 2% 2% 0;
+}
+
+.title-span {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+}
+
 </style>

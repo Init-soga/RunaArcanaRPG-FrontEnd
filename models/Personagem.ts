@@ -1,17 +1,19 @@
+import Region from "./Region"
+import Role from "./Role"
+
 interface Personagem {
     id: number,
-    nome: string,
-    manifesto_corpo: string,
-    manifesto_titulo: string,
-    regiao: string,
-    classe: string,
-    relacionado1: string,
-    relacionado2: string,
-    relacionado3: string,
-    titulo: string,
-    frase: string,
-    imagem: string,
-    mesa: string
+    name: string,
+    manifest_body: string,
+    manifest_title: string,
+    region_id: number,
+    region: Region,
+    role_id: number,
+    role: Role,
+    title: string,
+    speak: string,
+    url_splash: string,
+    url_select: string
 }
 
 export default Personagem
